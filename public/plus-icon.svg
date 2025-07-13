@@ -1,0 +1,28 @@
+<svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="20"
+            height="20"
+            viewBox="0,0,256,256"
+          >
+            <g
+              fill="#fd7e14"
+              fillRule="nonzero"
+              stroke="none"
+              strokeWidth="1"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeMiterlimit="10"
+              strokeDasharray=""
+              strokeDashoffset="0"
+              fontFamily="none"
+              fontWeight="none"
+              fontSize="none"
+              textAnchor="none"
+            >
+              <g transform="scale(3.55556,3.55556)">
+                <path d="M36,12c13.255,0 24,10.745 24,24c0,13.255 -10.745,24 -24,24c-13.255,0 -24,-10.745 -24,-24c0,-13.255 10.745,-24 24,-24zM44,39c1.657,0 3,-1.343 3,-3c0,-1.657 -1.343,-3 -3,-3c-0.329,0 -2.426,0 -5,0c0,-2.574 0,-4.672 0,-5c0,-1.657 -1.343,-3 -3,-3c-1.657,0 -3,1.343 -3,3c0,0.328 0,2.426 0,5c-2.574,0 -4.671,0 -5,0c-1.657,0 -3,1.343 -3,3c0,1.657 1.343,3 3,3c0.329,0 2.426,0 5,0c0,2.574 0,4.672 0,5c0,1.657 1.343,3 3,3c1.657,0 3,-1.343 3,-3c0,-0.328 0,-2.426 0,-5c2.574,0 4.671,0 5,0z"></path>
+              </g>
+            </g>
+          </svg>

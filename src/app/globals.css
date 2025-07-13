@@ -1,26 +1,77 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "tailwind-scrollbar-hide/v4";
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-rubik: "Rubik", sans-serif;
+  --toolbar-background: #1f2734;
+  --mainHeader-background: #273142;
+  --footer: #f7fafc;
+  --muted: #6c757d;
+  --grey-600: #6e7787;
+  --main: #f1f2f7;
+  --orenge-200: #fef2e8;
+  --grey-100: #f7f7fa;
+  --orenge-500: #f27a1a;
+  --rubik: "Rubik Variable", sans-serif;
+  --grey-500: #afbbca;
+  --blu-500: #5794ff;
+  --grean-100: #e7f9ef;
+  --grean-500: #0bc15c;
+  --info-100: #eef4ff;
+  --info-500: #5794ff;
+  --purpl-500: #8c4eff;
+  --black-500: #212529;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-toolbar: var(--toolbar-background);
+  --color-header: var(--mainHeader-background);
+  --color-footer: var(--footer);
+  --color-muted: var(--muted);
+  --color-main: var(--main);
+  --color-grey-500: var(--grey-500);
+  --color-blu-500: var(--blu-500);
+  --color-purpl-500: var(--purpl-500);
+  --color-grey-200: var(--grey-200);
+  --color-grey-500: var(--grey-500);
+  --color-grey-600: var(--grey-600);
+  --color-grey-100: var(--grey-100);
+  --color-orenge-200: var(--orenge-200);
+  --color-grass-100: var(--grean-100);
+  --color-grass-500: var(--grean-500);
+  --color-orenge-500: var(--orenge-500);
+  --color-info-100: var(--info-100);
+  --color-info-500: var(--info-500);
+  --color-black-500: var(--black-500);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.scroll-thin {
+  @apply [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar]:h-2
+    [&::-webkit-scrollbar-track]:bg-gray-100
+    [&::-webkit-scrollbar-thumb]:bg-[#dedede]
+    [&::-webkit-scrollbar-thumb]:rounded-full
+    dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+    dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500;
+}
+
+.scroll-visible {
+  @apply [&::-webkit-scrollbar]:hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-rubik);
+}
+.tab-divider::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  bottom: 30%;
+  right: 0;
+  width: 1px;
+  background-color: rgb(212, 214, 218); /* gray-200 */
 }

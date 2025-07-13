@@ -1,0 +1,588 @@
+export interface ProductVariant {
+  id: string;
+  barcode: string;
+  size: string;
+  state: string;
+  commission: string;
+  trendyolSellingPrice: number;
+  buyboxPrice?: number;
+  buyboxStatus: string;
+  stock: number;
+  kdvRate: number;
+  desi: number;
+  shippingAddress: string;
+  returnAddress: string;
+  cargoCompany?: string;
+  stateDescription: string;
+  isAvailableForSale: boolean;
+}
+
+export interface Product {
+  id: string;
+  partnerId: string;
+  modelCode: string;
+  color: string;
+  name: string;
+  image: string;
+  sex: string;
+  brand: string;
+  category: string;
+  description: string;
+  listPrice: number;
+  stockCode: string;
+  commission: number;
+  gtipCode: string;
+  sellingPrice: number;
+  buyboxPrice: number | null;
+  buyboxStatus: boolean;
+  deliveryTime: number;
+  customerVisiblePrice: number;
+  vatRate: number;
+  desi: number;
+  shippingAddress: string;
+  returnAddress: string;
+  cargoCompany: string;
+  totalStock: number;
+  totalVariantCount: number;
+  activeVariantCount: number;
+  status: "active" | "pending" | "passive";
+  statusDetails:
+    | "buybox-in"
+    | "buybox-out"
+    | "waiting"
+    | "revise"
+    | "soldout"
+    | "price-missing"
+    | "lockings"
+    | "in-archive"
+    | "closed-sale";
+  fillRate: number;
+  statusDescription: string;
+  state: string;
+  variants: ProductVariant[];
+}
+
+export const mockProducts: Product[] = [
+  {
+    id: "prod1",
+    partnerId: "P123",
+    modelCode: "275604B",
+    color: "Lacivert",
+    name: "Crop Body",
+    image: "/red-shirt.jpg",
+    sex: "Kadın",
+    brand: "TrendyolMilla",
+    category: "Giyim > T-Shirt & Bluz",
+    description: "Lacivert crop body, şık ve rahat.",
+    listPrice: 400.0,
+
+    stockCode: "TRGRM1",
+    commission: 0.215,
+    gtipCode: "620690900011",
+    sellingPrice: 350.0,
+    buyboxPrice: 350.0,
+    buyboxStatus: true,
+
+    deliveryTime: 2,
+    customerVisiblePrice: 350.0,
+    vatRate: 0.18,
+    desi: 1.2,
+    shippingAddress: "Merkez Depo",
+    returnAddress: "İade Depo A",
+    cargoCompany: "Yurtiçi Kargo",
+
+    totalStock: 0,
+    totalVariantCount: 3,
+    activeVariantCount: 0,
+    status: "active",
+    statusDetails: "soldout",
+    fillRate: 0,
+    statusDescription: "Ürün varyant durumlarını aşağıda görebilirsiniz.",
+    state: "Zayıf",
+    variants: [
+      {
+        id: "var1_1",
+        barcode: "TRGRM17",
+        size: "S",
+        state: "Tükendi",
+        commission: "%21.50",
+        trendyolSellingPrice: 350.0,
+        buyboxPrice: 350.0,
+        buyboxStatus: "Var",
+        stock: 0,
+        kdvRate: 0.18,
+        desi: 1.2,
+        shippingAddress: "Merkez Depo",
+        returnAddress: "İade Depo A",
+        cargoCompany: "Yurtiçi Kargo",
+        stateDescription: "Stokta yok",
+        isAvailableForSale: false,
+      },
+      {
+        id: "var1_2",
+        barcode: "TRGRM18",
+        size: "M",
+        state: "Tükendi",
+        commission: "%21.50",
+        trendyolSellingPrice: 350.0,
+        buyboxPrice: 350.0,
+        buyboxStatus: "Var",
+        stock: 0,
+        kdvRate: 0.18,
+        desi: 1.2,
+        shippingAddress: "Merkez Depo",
+        returnAddress: "İade Depo A",
+        cargoCompany: "Yurtiçi Kargo",
+        stateDescription: "Stokta yok",
+        isAvailableForSale: false,
+      },
+      {
+        id: "var1_3",
+        barcode: "TRGRM19",
+        size: "L",
+        state: "Tükendi",
+        commission: "%21.50",
+        trendyolSellingPrice: 350.0,
+        buyboxPrice: 350.0,
+        buyboxStatus: "Var",
+        stock: 0,
+        kdvRate: 0.18,
+        desi: 1.2,
+        shippingAddress: "Merkez Depo",
+        returnAddress: "İade Depo A",
+        cargoCompany: "Yurtiçi Kargo",
+        stateDescription: "Stokta yok",
+        isAvailableForSale: false,
+      },
+    ],
+  },
+  {
+    id: "prod2",
+    partnerId: "P124",
+    modelCode: "275604TGRMT",
+    color: "Siyah",
+    name: "Tetik Tişört Süprem Penye Kumaş",
+    image: "/white-shirt.jpeg",
+    sex: "Erkek",
+    brand: "ErkekGiyim",
+    category: "Giyim > T-Shirt",
+    description: "Siyah tişört, penye kumaş.",
+    listPrice: 700.0,
+
+    stockCode: "TRGRM2",
+    commission: 0.15,
+    gtipCode: "610910000011",
+    sellingPrice: 650.0,
+    buyboxPrice: 650.0,
+    buyboxStatus: true,
+
+    deliveryTime: 1,
+    customerVisiblePrice: 650.0,
+    vatRate: 0.2,
+    desi: 0.8,
+    shippingAddress: "Depo B",
+    returnAddress: "İade Depo B",
+    cargoCompany: "MNG Kargo",
+
+    totalStock: 300,
+    totalVariantCount: 3,
+    activeVariantCount: 3,
+    status: "active",
+    statusDetails: "buybox-in",
+    fillRate: 1,
+    statusDescription: "Ürün varyant durumlarını aşağıda görebilirsiniz.",
+    state: "Zayıf",
+    variants: [
+      {
+        id: "var2_1",
+        barcode: "TRGRM20",
+        size: "S",
+        state: "Satışta",
+        commission: "%15.00",
+        trendyolSellingPrice: 650.0,
+        buyboxPrice: 650.0,
+        buyboxStatus: "Var",
+        stock: 100,
+        kdvRate: 0.2,
+        desi: 0.8,
+        shippingAddress: "Depo B",
+        returnAddress: "İade Depo B",
+        cargoCompany: "MNG Kargo",
+        stateDescription: "Stokta",
+        isAvailableForSale: true,
+      },
+      {
+        id: "var2_2",
+        barcode: "TRGRM21",
+        size: "M",
+        state: "Satışta",
+        commission: "%15.00",
+        trendyolSellingPrice: 650.0,
+        buyboxPrice: 650.0,
+        buyboxStatus: "Var",
+        stock: 100,
+        kdvRate: 0.2,
+        desi: 0.8,
+        shippingAddress: "Depo B",
+        returnAddress: "İade Depo B",
+        cargoCompany: "MNG Kargo",
+        stateDescription: "Stokta",
+        isAvailableForSale: true,
+      },
+      {
+        id: "var2_3",
+        barcode: "TRGRM22",
+        size: "L",
+        state: "Satışta",
+        commission: "%15.00",
+        trendyolSellingPrice: 650.0,
+        buyboxPrice: 650.0,
+        buyboxStatus: "Var",
+        stock: 100,
+        kdvRate: 0.2,
+        desi: 0.8,
+        shippingAddress: "Depo B",
+        returnAddress: "İade Depo B",
+        cargoCompany: "MNG Kargo",
+        stateDescription: "Stokta",
+        isAvailableForSale: true,
+      },
+    ],
+  },
+  {
+    id: "prod3",
+    partnerId: "P125",
+    modelCode: "275604TGRMT",
+    color: "Beyaz",
+    name: "Tetik Tişört Süprem Penye Kumaş",
+    image: "/red-shirt.jpg",
+    sex: "Erkek",
+    brand: "ErkekGiyim",
+    category: "Giyim > T-Shirt",
+    description: "Beyaz tişört, penye kumaş.",
+    listPrice: 700.0,
+
+    stockCode: "TRGRM3",
+    commission: 0.15,
+    gtipCode: "610910000011",
+    sellingPrice: 650.0,
+    buyboxPrice: 650.0,
+    buyboxStatus: true,
+
+    deliveryTime: 1,
+    customerVisiblePrice: 650.0,
+    vatRate: 0.2,
+    desi: 0.8,
+    shippingAddress: "Depo C",
+    returnAddress: "İade Depo C",
+    cargoCompany: "Aras Kargo",
+
+    totalStock: 300,
+    totalVariantCount: 3,
+    activeVariantCount: 3,
+    status: "active",
+    statusDetails: "buybox-in",
+    fillRate: 1,
+    statusDescription: "Ürün varyant durumlarını aşağıda görebilirsiniz.",
+    state: "Zayıf",
+    variants: [
+      {
+        id: "var3_1",
+        barcode: "TRGRM30",
+        size: "S",
+        state: "Satışta",
+        commission: "%15.00",
+        trendyolSellingPrice: 650.0,
+        buyboxPrice: 650.0,
+        buyboxStatus: "Var",
+        stock: 100,
+        kdvRate: 0.2,
+        desi: 0.8,
+        shippingAddress: "Depo C",
+        returnAddress: "İade Depo C",
+        cargoCompany: "Aras Kargo",
+        stateDescription: "Stokta",
+        isAvailableForSale: true,
+      },
+      {
+        id: "var3_2",
+        barcode: "TRGRM31",
+        size: "M",
+        state: "Satışta",
+        commission: "%15.00",
+        trendyolSellingPrice: 650.0,
+        buyboxPrice: 650.0,
+        buyboxStatus: "Var",
+        stock: 100,
+        kdvRate: 0.2,
+        desi: 0.8,
+        shippingAddress: "Depo C",
+        returnAddress: "İade Depo C",
+        cargoCompany: "Aras Kargo",
+        stateDescription: "Stokta",
+        isAvailableForSale: true,
+      },
+      {
+        id: "var3_3",
+        barcode: "TRGRM32",
+        size: "L",
+        state: "Satışta",
+        commission: "%15.00",
+        trendyolSellingPrice: 650.0,
+        buyboxPrice: 650.0,
+        buyboxStatus: "Var",
+        stock: 100,
+        kdvRate: 0.2,
+        desi: 0.8,
+        shippingAddress: "Depo C",
+        returnAddress: "İade Depo C",
+        cargoCompany: "Aras Kargo",
+        stateDescription: "Stokta",
+        isAvailableForSale: true,
+      },
+    ],
+  },
+  {
+    id: "prod4",
+    partnerId: "P126",
+    modelCode: "456789A",
+    color: "Mavi",
+    name: "Basic Jean",
+    image: "/white-shirt.jpeg",
+    sex: "Kadın",
+    brand: "Mavi Jeans",
+    category: "Giyim > Jean",
+    description: "Rahat kesim mavi jean pantolon.",
+    listPrice: 500.0,
+
+    stockCode: "TRGRM4",
+    commission: 0.18,
+    gtipCode: "620462000012",
+    sellingPrice: 450.0,
+    buyboxPrice: 450.0,
+    buyboxStatus: true,
+
+    deliveryTime: 3,
+    customerVisiblePrice: 450.0,
+    vatRate: 0.18,
+    desi: 1.5,
+    shippingAddress: "Merkez Depo",
+    returnAddress: "İade Depo A",
+    cargoCompany: "Yurtiçi Kargo",
+
+    totalStock: 250,
+    totalVariantCount: 2,
+    activeVariantCount: 2,
+    status: "active",
+    statusDetails: "buybox-in",
+    fillRate: 1,
+    statusDescription: "Ürün varyant durumlarını aşağıda görebilirsiniz.",
+    state: "Aktif",
+    variants: [
+      {
+        id: "var4_1",
+        barcode: "TRGRM40",
+        size: "36",
+        state: "Satışta",
+        commission: "%18.00",
+        trendyolSellingPrice: 450.0,
+        buyboxPrice: 450.0,
+        buyboxStatus: "Var",
+        stock: 120,
+        kdvRate: 0.18,
+        desi: 1.5,
+        shippingAddress: "Merkez Depo",
+        returnAddress: "İade Depo A",
+        cargoCompany: "Yurtiçi Kargo",
+        stateDescription: "Stokta",
+        isAvailableForSale: true,
+      },
+      {
+        id: "var4_2",
+        barcode: "TRGRM41",
+        size: "38",
+        state: "Satışta",
+        commission: "%18.00",
+        trendyolSellingPrice: 450.0,
+        buyboxPrice: 450.0,
+        buyboxStatus: "Var",
+        stock: 130,
+        kdvRate: 0.18,
+        desi: 1.5,
+        shippingAddress: "Merkez Depo",
+        returnAddress: "İade Depo A",
+        cargoCompany: "Yurtiçi Kargo",
+        stateDescription: "Stokta",
+        isAvailableForSale: true,
+      },
+    ],
+  },
+  {
+    id: "prod5",
+    partnerId: "P127",
+    modelCode: "789012X",
+    color: "Kırmızı",
+    name: "Spor Ayakkabı",
+    image: "https://via.placeholder.com/150",
+    sex: "Unisex",
+    brand: "Nike",
+    category: "Ayakkabı > Spor Ayakkabı",
+    description: "Performans odaklı spor ayakkabı.",
+    listPrice: 1200.0,
+
+    stockCode: "TRGRM5",
+    commission: 0.12,
+    gtipCode: "640411000011",
+    sellingPrice: 1000.0,
+    buyboxPrice: null,
+    buyboxStatus: false,
+
+    deliveryTime: 2,
+    customerVisiblePrice: 1000.0,
+    vatRate: 0.2,
+    desi: 2.0,
+    shippingAddress: "Depo D",
+    returnAddress: "İade Depo D",
+    cargoCompany: "PTT Kargo",
+
+    totalStock: 0,
+    totalVariantCount: 4,
+    activeVariantCount: 0,
+    status: "active",
+    statusDetails: "soldout",
+    fillRate: 0,
+    statusDescription: "Ürün varyant durumlarını aşağıda görebilirsiniz.",
+    state: "Zayıf",
+    variants: [
+      {
+        id: "var5_1",
+        barcode: "TRGRM50",
+        size: "40",
+        state: "Tükendi",
+        commission: "%12.00",
+        trendyolSellingPrice: 1000.0,
+
+        buyboxStatus: "Yok",
+        stock: 0,
+        kdvRate: 0.2,
+        desi: 2.0,
+        shippingAddress: "Depo D",
+        returnAddress: "İade Depo D",
+        cargoCompany: "PTT Kargo",
+        stateDescription: "Stokta yok",
+        isAvailableForSale: false,
+      },
+      {
+        id: "var5_2",
+        barcode: "TRGRM51",
+        size: "41",
+        state: "Tükendi",
+        commission: "%12.00",
+        trendyolSellingPrice: 1000.0,
+
+        buyboxStatus: "Yok",
+        stock: 0,
+        kdvRate: 0.2,
+        desi: 2.0,
+        shippingAddress: "Depo D",
+        returnAddress: "İade Depo D",
+        cargoCompany: "PTT Kargo",
+        stateDescription: "Stokta yok",
+        isAvailableForSale: false,
+      },
+      {
+        id: "var5_3",
+        barcode: "TRGRM52",
+        size: "42",
+        state: "Tükendi",
+        commission: "%12.00",
+        trendyolSellingPrice: 1000.0,
+
+        buyboxStatus: "Yok",
+        stock: 0,
+        kdvRate: 0.2,
+        desi: 2.0,
+        shippingAddress: "Depo D",
+        returnAddress: "İade Depo D",
+        cargoCompany: "PTT Kargo",
+        stateDescription: "Stokta yok",
+        isAvailableForSale: false,
+      },
+      {
+        id: "var5_4",
+        barcode: "TRGRM53",
+        size: "43",
+        state: "Tükendi",
+        commission: "%12.00",
+        trendyolSellingPrice: 1000.0,
+
+        buyboxStatus: "Yok",
+        stock: 0,
+        kdvRate: 0.2,
+        desi: 2.0,
+        shippingAddress: "Depo D",
+        returnAddress: "İade Depo D",
+        cargoCompany: "PTT Kargo",
+        stateDescription: "Stokta yok",
+        isAvailableForSale: false,
+      },
+    ],
+  },
+  {
+    id: "prod6",
+    partnerId: "P128",
+    modelCode: "BAGT345",
+    color: "Bej",
+    name: "Omuz Çantası",
+    image: "https://via.placeholder.com/150",
+    sex: "Kadın",
+    brand: "Çanta Modası",
+    category: "Aksesuar > Çanta",
+    description: "Şık ve kullanışlı omuz çantası.",
+    listPrice: 300.0,
+
+    stockCode: "TRGRM6",
+    commission: 0.25,
+    gtipCode: "420222000000",
+    sellingPrice: 280.0,
+    buyboxPrice: 280.0,
+    buyboxStatus: true,
+
+    deliveryTime: 2,
+    customerVisiblePrice: 280.0,
+    vatRate: 0.18,
+    desi: 0.5,
+    shippingAddress: "Merkez Depo",
+    returnAddress: "İade Depo A",
+    cargoCompany: "Aras Kargo",
+
+    totalStock: 50,
+    totalVariantCount: 1,
+    activeVariantCount: 1,
+    status: "active",
+    statusDetails: "buybox-in",
+    fillRate: 1,
+    statusDescription: "Ürün varyant durumlarını aşağıda görebilirsiniz.",
+    state: "Aktif",
+    variants: [
+      {
+        id: "var6_1",
+        barcode: "TRGRM60",
+        size: "Standart",
+        state: "Satışta",
+        commission: "%25.00",
+        trendyolSellingPrice: 280.0,
+        buyboxPrice: 280.0,
+        buyboxStatus: "Var",
+        stock: 50,
+        kdvRate: 0.18,
+        desi: 0.5,
+        shippingAddress: "Merkez Depo",
+        returnAddress: "İade Depo A",
+        cargoCompany: "Aras Kargo",
+        stateDescription: "Stokta",
+        isAvailableForSale: true,
+      },
+    ],
+  },
+];
