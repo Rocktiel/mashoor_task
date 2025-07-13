@@ -1,9 +1,9 @@
 # 1. Header (Başlık) Bölümü
   ## Yapılan Değişiklikler ve Eklemeler:
 
-Mevcut Header'ın Mobil Uyumluluğu: Asıl projenin mevcut header kısmı alınarak mobil cihazlarda daha iyi bir kullanıcı deneyimi sunacak şekilde responsive hale getirildi. Bu değişiklik, farklı ekran boyutlarında düzenin bozulmamasını ve öğelerin doğru şekilde hizalanmasını sağlamak amacıyla yapıldı.
+- Mevcut Header'ın Mobil Uyumluluğu: Asıl projenin mevcut header kısmı alınarak mobil cihazlarda daha iyi bir kullanıcı deneyimi sunacak şekilde responsive hale getirildi. Bu değişiklik, farklı ekran boyutlarında düzenin bozulmamasını ve öğelerin doğru şekilde hizalanmasını sağlamak amacıyla yapıldı.
 
-src/components/header/NavbarItems.tsx (Yeni Dosya): Header'daki navigasyon öğeleri (menü itemleri) ayrı bir dosyaya taşındı.
+- `src/components/header/NavbarItems.tsx` (Yeni Dosya): Header'daki navigasyon öğeleri (menü itemleri) ayrı bir dosyaya taşındı.
 
 Neden Eklendi: Bu dosya, header bileşeninin daha düzenli ve okunabilir olmasını sağlamak, navigasyon öğelerinin merkezi bir yerden yönetilmesine olanak tanımak ve kod tekrarını azaltmak amacıyla eklendi. Navigasyon yapısının değişmesi durumunda sadece bu dosyanın güncellenmesi yeterli olacaktır.
 
