@@ -130,3 +130,8 @@ Yapılan Değişiklikler ve Eklemeler:
 
 ### Neden Eklendi: 
 Ürün listeleme sayfasının ana içeriğini oluşturan ürün tablosu ve ilgili işlevsellikler (sütun seçimi, Excel indirme) bu bileşenler aracılığıyla sağlandı. Tablo yapısının karmaşıklığı nedeniyle, her bir hücre tipi ve işlevselliği ayrı bileşenlere ayrılarak kodun daha yönetilebilir ve yeniden kullanılabilir olması sağlandı. Bu modüler yapı, tablonun esnekliğini artırır ve gelecekteki değişiklikleri kolaylaştırır.
+
+## Bulunmayan işlevler ve kısımlar.
+- Filtreleme bulunmuyor.Seçilen Tab'a göre veya girilen filtrelere göre bir filtreleme işlevi bulunmuyor.
+- Tabloda bazı eksiklikler mevcut orijinaline göre.
+- Tabloda sıralama bulunmuyor.
